@@ -67,4 +67,16 @@ public class Customer {
     public void setTotalMoney(double totalMoney) {
         this.totalMoney = totalMoney;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", listPhone=" + listPhone +
+                ", totalMoney=" + totalMoney +
+                '}';
+    }
 }

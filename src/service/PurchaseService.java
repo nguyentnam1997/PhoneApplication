@@ -28,7 +28,7 @@ public class PurchaseService {
                             else {
                                 //thêm điện thoại vào List điện thoại của customer
                                 customer.getListPhone().add(phone);
-                                phone.setQuantity(quantity);
+                                phone.setQuantity(phone.getQuantity() - quantity);
                                 //tạo biến lưu trữ tiền hiện tại
                                 double currentMoney = customer.getTotalMoney();
                                 customer.setTotalMoney(currentMoney + phone.getPrice());
@@ -75,6 +75,7 @@ public class PurchaseService {
                             else {
                                 //Xoá điện thoại trongư List điện thoại của customer
                                 customer.getListPhone().remove(phone);
+                                phone.setQuantity(phone.getQuantity() + quantity);
                                 //tạo biến lưu trữ tiền hiện tại
                                 double currentMoney = customer.getTotalMoney();
                                 customer.setTotalMoney(currentMoney - phone.getPrice() * phone.getQuantity());
