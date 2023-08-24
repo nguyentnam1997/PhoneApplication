@@ -18,25 +18,6 @@ public class Main {
         CustomerManager customerManager = new CustomerManager();
         PhoneStore phoneStore = new PhoneStore();
         PurchaseService purchaseService = new PurchaseService();
-        do {
-            menu.startMenu();
-            int choose = Integer.parseInt(scanner.nextLine());
-            switch (choose) {
-                case 1 -> {
-                    phoneStore.optionsOfPhone(scanner, menu, utils, listPhone);
-                    continue;
-                }
-                case 2 -> {
-                    customerManager.optionsOfCustomer(scanner, menu, utils, listCustomer);
-                    continue;
-                }
-                case 3 -> {
-                    purchaseService.purchasePhone(scanner, listPhone, listCustomer);
-                    continue;
-                }
-            }
-            break;
-        }
-        while (utils.continueOrBreak(scanner));
+        purchaseService.phoneApplication(scanner, menu, utils, phoneStore, customerManager, purchaseService, listPhone, listCustomer);
     }
 }
